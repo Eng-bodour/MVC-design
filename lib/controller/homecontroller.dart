@@ -2,15 +2,16 @@ import 'package:get/get.dart';
 
 //you have put update with GETBuilder
 class HomeController extends GetxController {
-  int count = 0;
+  //you have obs with GetX and Rxint
+  RxInt count = 0.obs;
 
   void increment() {
     count++;
-    update();
+    // update();
   }
 
   void decrement() {
     count--;
-    update();
+    // update();
   }
 }
