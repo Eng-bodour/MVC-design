@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mvc/controller/homecontroller.dart';
@@ -8,6 +10,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final HomeController controller = Get.put(HomeController());
     return Scaffold(
       appBar: AppBar(
         title: const Text('MVC-1'),
@@ -17,9 +20,8 @@ class Home extends StatelessWidget {
       body: Center(
         //add GetBuilder<HomeController> (builder: (controller) => Row  GETBuilder
         //you have init  => HomeController()
-        child: GetX<HomeController>(
-          init: HomeController(),
-          builder: (controller) => Row(
+        child: Obx(
+          () => Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
